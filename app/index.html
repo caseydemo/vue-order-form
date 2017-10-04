@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<title>vue order form</title>
+</head>
+<body>
+	<h1>Vue Order Form</h1>
+
+
+<div v-cloak id="menu">
+		<nav v-bind:class="active" v-on:click.prevent> <!-- I think I need to get rid of this??? -->
+			<a v-on:click="makeActive('webDev')" class="webDev" href="#">Web Development</a>	
+			<a v-on:click="makeActive('design')" class="design" href="#">Design</a>	
+			<a v-on:click="makeActive('services')" class="services" href="#">Services</a>	
+			<a v-on:click="makeActive('contact')" class="contact" href="#">Contact</a>	
+			<a v-on:click="makeActive('blog')" class="blog" href="#">Blog</a>	
+		</nav>
+
+<!-- total up here... somehow -->
+		<div id="message">
+			<p v-if="active">Now displaying <b>{{ active }}</b></p>
+			<p v-else>Please click a menu item</p>
+		</div>
+	</div>
+	
+
+  <script src="https://unpkg.com/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
