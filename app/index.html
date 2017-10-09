@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<link rel="stylesheet" href="css/style.css">
 	<title>vue order form</title>
 </head>
@@ -8,22 +9,23 @@
 	<h1>Vue Order Form</h1>
 
 
-<div v-cloak id="menu">
-		<nav v-bind:class="active" v-on:click.prevent> <!-- I think I need to get rid of this??? -->
-			<a v-on:click="makeActive('webDev')" class="webDev" href="#">Web Development</a>	
-			<a v-on:click="makeActive('design')" class="design" href="#">Design</a>	
-			<a v-on:click="makeActive('services')" class="services" href="#">Services</a>	
-			<a v-on:click="makeActive('contact')" class="contact" href="#">Contact</a>	
-			<a v-on:click="makeActive('blog')" class="blog" href="#">Blog</a>	
-		</nav>
+	<form id="main" v-cloak>
 
-<!-- total up here... somehow -->
-		<div id="message">
-			<p v-if="active">Now displaying <b>{{ active }}</b></p>
-			<p v-else>Please click a menu item</p>
+		<h1>Services</h1>
+
+		<ul>
+
+			<li v-for="service in services" v-bind:class="{'active': services.active}" v-on:click="toggleActive(service)">{{service.name}} <span>{{service.price | currency}}</span>
+			</li>
+
+		</ul>
+
+		<div class="total">
+
+			Total: <span>{{total() | currency }}</span>
 		</div>
-	</div>
-	
+
+	</form>
 
   <script src="https://unpkg.com/vue"></script>
   <script src="js/main.js"></script>

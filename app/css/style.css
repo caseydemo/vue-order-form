@@ -1,50 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Cookie);
+
+
+
+[v-cloak] {
+	display: none;
+}
 * {
 	margin : 0px;
 	padding : 0px;
 }
 
-[v-cloak] {
-	display: none;
-}
-
 body {
 	font-family: 'Open Sans', sans-serif;
-}
-
-nav {
-	background-color : #5597b4;
-	margin : 60px auto 45px;		
 	text-align: center;
-	width: 100%;
+}
+a, a:visited {
+	outline:none;
+	color:#389dc1;
+}
+a:hover{
+	text-decoration: none;
+}
+section, footer, header, aside, nav{
+	display: block;
 }
 
-nav a {
-	font-size : 16px;
-	color : #fff;
-	display : inline-block;
-	padding-top: 18px;
-	padding-bottom: 18px;
-	padding-right: 30px;
-	padding-left: 30px;
-	text-transform : uppercase;
-	text-decoration : none;
-	letter-spacing: 2px;
+/*------------------------------
+
+	this is the order form stuff
+
+-------------------------------*/
+
+form{
+	background-color: #61a1bc;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px #ccc;
+	width: 400px;
+	padding:35px 60px;
+	margin: 50px auto;
 }
 
-#message p {
-	text-align: center;
-	font-size : 16px;
-	letter-spacing: 2px;
+form h1{
+	color: #fff;
+	font-size:64px;
+	font-family: 'Cookie', cursive;
+	font-weight: normal;
+	line-height: 1;
+	text-shadow: 0 3px 0 rgba(0,0,0,0.1);
 }
 
-#message p b {
-	text-transform: uppercase;
+form ul{
+	list-style: none;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+	margin: 20px 0 15px;
 }
 
-nav.home .home,
-nav.projects .projects,
-nav.services .services,
-nav.contact .contact,
-nav.blog .blog {
+
+/*this controls the name in services*/
+form ul li{
+	padding: 20px 30px;
 	background-color: #e35885;
+	margin-bottom: 8px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	cursor: pointer;
+}
+
+/*this controls the price in services*/
+form ul li span{
+	float: right;
+}
+
+form ul li.active{
+	background-color: #8ec16d;
+}
+
+div.total{
+	border-top: 1px solid rgba(255,255,255,0.5);
+	padding: 15px 30px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+	colot: #fff;
+}
+
+div.total span{
+	float: right;
 }
